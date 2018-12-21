@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package framework;
+option cc_enable_arenas = true;
+option java_outer_classname = "IteratorProtos";
+option java_multiple_files = true;
+option java_package = "org.tensorflow.util";
+/////////////////////////////////////////////////////
+// GoGo Import and Options (Golang optimizations)
+/////////////////////////////////////////////////////
+import "gogo/protobuf/gogoproto/gogo.proto";
+option (gogoproto.equal_all) = true;
+option (gogoproto.goproto_stringer_all) = false;
+option (gogoproto.gostring_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.stringer_all) =  true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.verbose_equal_all) = true;
+option (gogoproto.populate_all) = true;
+option (gogoproto.testgen_all) = true;
+/////////////////////////////////////////////////////
+// TF Imports
+/////////////////////////////////////////////////////
+
+// Protocol buffer representing the metadata for an iterator's state stored
+// as a Variant tensor.
+message IteratorStateMetadata {
+  // A user-specified version string.
+  string version = 1;
+
+  // Keys for tensors in the VariantTensorDataProto.
+  repeated string keys = 2;
+}
