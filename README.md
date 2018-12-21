@@ -13,7 +13,7 @@
 [7]: https://storage.googleapis.com/tensortask-static/build/gotfpb.svg
 [8]: https://github.com/sbsends/cloud-build-badge
 
-# 📜 GOTFPB: Curated Golang TensorFlow Protocol Buffers
+# 📜 GoTFPB: Curated Golang TensorFlow Protocol Buffers
 
 ```diff
 - #############################
