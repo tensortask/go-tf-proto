@@ -13,7 +13,7 @@
 [7]: https://storage.googleapis.com/tensortask-static/build/gotfpb.svg
 [8]: https://github.com/sbsends/cloud-build-badge
 
-# 📖 GOTFPB: Curated Golang TensorFlow Protocol Buffers
+# 📜 GoTFPB: Curated Golang TensorFlow Protocol Buffers
 
 ```diff
 - #############################
@@ -23,13 +23,17 @@
 
 ## Package Layout
 
+Each package has two sub-directories. The gen directory contains the generated Golang source code. The protos directory contains the protocol buffer definitions (proto3).
+
 * **core**: fundamental protocol buffers used at the core of TensorFlow.
   * **framework**: basic absolutely vital tensors used in TensorFlow (graph, tensor, etcetera). 
 
 ## Imports
 
-* **core**
-  * **framework** `github.com/tensortask/gotfpb/core/framework`
+Every package imported by a Go program must end in /gen. 
+
+* **core**:
+  * **framework**: `github.com/tensortask/gotfpb/core/framework/gen`
 
 ## Compilation 
 
