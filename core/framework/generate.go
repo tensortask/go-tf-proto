@@ -34,9 +34,8 @@ func generateProtos() error {
 		args := []string{
 			fmt.Sprintf("-I=%s", filepath.Join(goPath, "src")),
 			fmt.Sprintf("-I=%s", filepath.Join(goPath, "src", "github.com", "gogo", "protobuf", "protobuf")),
-			fmt.Sprintf("-I=%s", filepath.Join(goPath, "src", "github.com", "tensortask", "gotfpb", "core", "framework", "protos")),
-			fmt.Sprintf("--proto_path=%s", filepath.Join(goPath, "src", "github.com")),
-			fmt.Sprintf("--proto_path=%s", filepath.Join(goPath, "src", "github.com", "tensortask/gotfpb/core/framework/protos")),
+			fmt.Sprintf("-I=%s", filepath.Join(goPath, "src", "github.com")),
+			"-I=protos",
 			"--gogofaster_out=Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/duration.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/struct.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/timestamp.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/wrappers.proto=github.com/gogo/protobuf/types:gen",
 			path,
 		}
@@ -64,3 +63,15 @@ func splitPath(paths []string) ([]string, error) {
 	}
 	return files, nil
 }
+
+// if err != nil {
+// 	log.Error().Err(err).Msg("could not read directory")
+// }
+// args := []string{
+// 	"-I=protos",
+// 	fmt.Sprintf("-I=%s", filepath.Join(goPath, "src")),
+// 	fmt.Sprintf("-I=%s", filepath.Join(goPath, "src", "github.com", "gogo", "protobuf", "protobuf")),
+// 	fmt.Sprintf("--proto_path=%s", filepath.Join(goPath, "src", "github.com")),
+// 	"--gogofaster_out=Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/duration.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/struct.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/timestamp.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/wrappers.proto=github.com/gogo/protobuf/types:.",
+// }
+// args = append(args, files...)
