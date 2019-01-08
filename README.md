@@ -16,6 +16,8 @@
 # 📜 GoTFPB: Curated Golang TensorFlow Protocol Buffers
 GoTFPB provides compiled golang code for tensorflow protocol buffers. Instead of compiling the protocol buffers locally, you can simply import the golang code like any other golang package.
 
+Note: The build is failing because no unit tests have been written yet.
+
 ## Package Layout
 
 Each package has two sub-directories. The gen directory contains the generated Golang source code. The protos directory contains the protocol buffer definitions (proto3).
