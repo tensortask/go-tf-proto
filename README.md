@@ -14,12 +14,7 @@
 [8]: https://github.com/sbsends/cloud-build-badge
 
 # 📜 GoTFPB: Curated Golang TensorFlow Protocol Buffers
-
-```diff
-- #############################
-- #       ALPHA PACKAGE       #
-- #############################
-```
+GoTFPB provides compiled golang code for tensorflow protocol buffers. Instead of compiling the protocol buffers locally, you can simply import the golang code like any other golang package.
 
 ## Package Layout
 
